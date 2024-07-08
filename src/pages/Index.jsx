@@ -9,6 +9,14 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { CheckCircle2, Star } from "lucide-react";
 import { useEffect } from "react";
 
@@ -43,7 +51,29 @@ const Index = () => {
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl font-bold mb-4">Transform Your Workflow with Our SaaS Solution</h1>
             <p className="text-xl mb-8">Streamline processes, boost productivity, and drive growth.</p>
-            <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100">Get Started Free</Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100">Get Started Free</Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[425px]">
+                <DialogHeader>
+                  <DialogTitle>Get Started with Our SaaS</DialogTitle>
+                  <DialogDescription>
+                    This is a mock modal. In a real application, you would see options to sign up or learn more about our services.
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="grid gap-4 py-4">
+                  <p>Features you might expect in a real modal:</p>
+                  <ul className="list-disc list-inside space-y-2">
+                    <li>Sign-up form</li>
+                    <li>Product tour options</li>
+                    <li>Pricing information</li>
+                    <li>Contact support</li>
+                  </ul>
+                </div>
+                <p className="text-sm text-gray-500 italic">This modal is for demonstration purposes only.</p>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </section>
