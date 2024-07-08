@@ -10,9 +10,19 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { CheckCircle2, Star } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const Index = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   useEffect(() => {
     const handleNavClick = (e) => {
       const target = e.target.closest('a[href^="#"]');
@@ -43,7 +53,32 @@ const Index = () => {
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl font-bold mb-4">Transform Your Workflow with Our SaaS Solution</h1>
             <p className="text-xl mb-8">Streamline processes, boost productivity, and drive growth.</p>
-            <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100">Get Started Free</Button>
+            <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+              <DialogTrigger asChild>
+                <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100">Get Started Free</Button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Get Started with Our SaaS Solution</DialogTitle>
+                  <DialogDescription>
+                    This is a mock modal for demonstration purposes. In a real application, this would contain a form or further information about getting started.
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="mt-4">
+                  <p className="text-sm text-gray-500">Features you might expect in a real "Get Started" flow:</p>
+                  <ul className="list-disc list-inside mt-2 text-sm text-gray-500">
+                    <li>Account creation form</li>
+                    <li>Product tour or onboarding steps</li>
+                    <li>Pricing plan selection</li>
+                    <li>Integration options</li>
+                  </ul>
+                </div>
+                <div className="mt-6 bg-gray-100 p-4 rounded-md">
+                  <p className="text-sm font-semibold text-gray-700">Mock Notice</p>
+                  <p className="text-xs text-gray-600">This modal is non-functional and for display purposes only.</p>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </section>
