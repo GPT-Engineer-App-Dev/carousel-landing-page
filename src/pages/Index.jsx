@@ -10,7 +10,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { CheckCircle2, Star } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import {
   Dialog,
   DialogContent,
