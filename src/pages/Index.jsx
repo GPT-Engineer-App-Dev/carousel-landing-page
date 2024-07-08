@@ -21,8 +21,6 @@ import {
 } from "@/components/ui/dialog";
 
 const Index = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   useEffect(() => {
     const handleNavClick = (e) => {
       const target = e.target.closest('a[href^="#"]');
@@ -53,7 +51,7 @@ const Index = () => {
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl font-bold mb-4">Transform Your Workflow with Our SaaS Solution</h1>
             <p className="text-xl mb-8">Streamline processes, boost productivity, and drive growth.</p>
-            <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+            <Dialog>
               <DialogTrigger asChild>
                 <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100">Get Started Free</Button>
               </DialogTrigger>
